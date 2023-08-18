@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="aaa">
+        <button id="btn">ㅇㄻㅌ ㅁㄷㄱ</button>
+       
+    </div>
+</body>
+<script>
+    let aaa = document.getElementById('aaa')
+    document.getElementById('btn').addEventListener('click',()=>{
+        aaa.innerHTML+=` <button id="btn2" onclick="aaaa()">생성된 버튼</button>`
+    })   
+    function aaaa(){
+        aaa.innerHTML+=`<h1>생성된 버튼을 클릭함</h1>`
+    }
+</script>
+</html>

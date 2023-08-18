@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes scaleFount{
+            0%{
+                font-size: 10px;
+            }
+            50%{
+                font-size: 50px;
+            }
+            100%{
+                font-size: 100px;
+            }
+        }
+        .ani{
+            animation-name: scaleFount;
+            animation-duration: 5s;
+            animation-iteration-count: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.애니메이션 등록(@keyframes)
+            -시간비율 0%~100% 0% = from, 100% = to 로 대체 가능
+
+        @keyframes 애니메이션 명(
+            시간비율 {
+                스타일:
+            }.....\
+
+        )
+        2. 애니메이션 적용
+        animation-name : 동작할 애니메이션 이름
+        animation-duration : 동작시간
+        animation-interation-count : 반복횟수 => 숫자 or infinite(무한)
+     -->
+     <span class="ani">animation-duration</span>
+</body>
+</html>

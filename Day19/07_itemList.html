@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">Tag 한번에 추가하기</button>
+    <button id="btn2">Tag 하나씩 추가하기</button>
+    <button id="btn3">Tag 한번에 추가하기</button>
+    <button id="btn4">Tag 하나씩 추가하기</button>
+    <ul id="ul"></ul>
+    <hr>
+    <ol id="ol"></ol>
+    <ul id="ul1"></ul>
+
+    <script>
+        let ul = document.getElementById('ul')
+        let ol = document.getElementById('ol')
+        cnt =0 
+        let arr = ['HTML','CSS','javascript','SQL'];
+        document.getElementById('btn1').addEventListener('click',()=>{
+            ul.innerHTML = ''
+            ul.innerHTML+=`
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>SQL</li>`
+        })
+        document.getElementById('btn1').addEventListener('click',()=>{
+            let ul1 = document.getElementById('ul1')
+            datas.forEach
+            ul.innerHTML = ''
+            ul.innerHTML+=`
+            <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>SQL</li>`
+        })
+        document.getElementById('btn2').addEventListener('click',()=>{
+            ol.innerHTML+=`<li>${arr[cnt]}</li>`
+            cnt++
+            if(cnt>4){
+                cnt =0;
+                ol.innerHTML=''
+            }
+        })
+        
+    </script>
+</body>
+</html>

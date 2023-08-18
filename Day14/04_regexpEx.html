@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="fileName">
+    <button type="button" onclick="cheak()">확인</button>
+    <h3 id="screen"></h3>
+
+    <!-- 
+        input 파일에 파일명. 확장자 를 입력하여 전송 버튼을 누르면
+        이미지 파일인지 검사하여
+        이미지 파일이면 
+        정상파일입니다 <초록색>
+        이미지 파일이 아니면 
+        이미지 파일만 가능합니다 . <빨간색>
+        출력하기
+        이미지파일 :jpg,png,jpeg,gif
+        -대문자로 된 확장자명도 판단 가능ㅎ애야 함
+     -->
+     <script>
+        function cheak(){
+            let fileName = document.getElementById('fileName').value;
+            let screen = document.getElementById('screen');
+            console.log(fileName)
+            console.log(fileName.match(/(jpg|png|jpeg|gif)/ig))
+            if(fileName.match(/(jpg|png|jpeg|gif)/ig)){
+                console.log(fileName);
+                screen.innerHTML=`<div style ="color: green;">정상 파일 입니다</div>`
+            }
+            else{
+
+                screen.innerHTML=`<div style ="color: red;">이미지 파일만 가능합니다</div>`
+            }
+        }
+     </script>
+</body>
+</html>

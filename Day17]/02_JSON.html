@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>서버로 데이터를 보낼때
+            JASON.stringify (js object)
+        </li>
+        <li>서버로 데이터를 받을 때
+            JASIN.parse 
+        </li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        //서버에서 온 데이터 stringData
+        const stringData = `{"id":"1234","type":"document","name":"cake",`+
+        `"image":{"url":"img/thumbnail/001.jpg","width":"20","height":"20"}}`
+        console.log(stringData)
+        let parseData = JSON.parse(stringData);//string -> object로 변환
+        console.log(parseData)
+
+        ///console에 key : value 형식으로 출력
+        ////for in 으로 접근
+        
+        for(const c in parseData){
+            
+            if(c=="image"){
+                for(const b in parseData[c]){
+                    console.log(`${b} : ${parseData[c][b]}`)
+                }
+            }
+            else{console.log(`${c} : ${parseData[c]}`)}
+            
+        }
+    </script>
+</body>
+</html>

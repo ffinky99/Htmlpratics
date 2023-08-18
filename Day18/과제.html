@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            position: absolute;
+            font-size: 30;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #box{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            top: 10%;
+            background-color: rgb(14, 180, 153);
+            width: 800px;
+            height: 100px;
+            text-align: center;
+        }
+        #box2{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%);
+            width: 800px;
+
+            height: 2000px;
+        }
+        #seach{
+            
+            margin: auto;
+            width:600px ;
+            height: 40px;
+        }
+        #btn{
+            height: 40px;
+        }
+        #box2>div{
+            width: 800px;
+            height: 55px;
+        
+        }
+        #box2>div:nth-child(odd){
+            background-color: aquamarine;
+        }
+        #box2>div:nth-child(even){
+            background-color: rgb(255, 238, 160);
+        }
+        #box>div>button{
+            left: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        여행 준비물 점검 목록
+    </h1>
+    <div id="box">
+        <input id="seach" type="text"> <button type="button" id="btn" onclick="gogogo()"> 추가</button>
+    </div>
+    <div id="box2"></div>
+
+    <script>
+        let i = 1;
+        let j = [];
+        let k = [];
+        function gogogo(){
+            let Arrlist =[];
+            let Btnlist =[];
+            
+            let box2 = document.getElementById('box2')
+           
+            j.push( box2.innerHTML+=`<div id="a${i}">${document.getElementById('seach').value} <span><button onclick="numm(i)">X</button></span></div>`)
+            // console.log(j)
+            k.push(i)
+            console.log(j)
+            i++
+         }
+      
+         function numm(i){
+          
+         }
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #ptag{
+            color: aquamarine;
+        }
+        .hong{
+            color: mediumorchid;
+        }
+        .hong:hover{
+            color: indigo;
+        }
+        p{
+            font-size: 50px;
+            font-style: italic;
+        }
+        p:nth-child(even){
+            font-weight: 700;
+        }
+        body>p{
+            color: cadetblue;
+        }
+    </style>
+    
+    
+</head>
+<body>
+
+    <p id ="ptag">안녕하세요. 홍길동입니다.</p>
+    <p class="hong">안녕하세요. 홍길동입니다.</p>
+    <p class="hong">안녕하세요. 홍길동입니다.</p>
+    <p >안녕하세요. 홍길동입니다.</p>
+    <p>안녕하세요. 홍길동입니다.</p>
+
+
+    <!-- selector : 선택자
+
+        선택자{
+            속성 : 값;
+        }
+        - 선택자 : 요소 (태그, 엘리먼트)를 선택하게 하는 이름
+            ㄴ id 선택자 : #아이디명 => 한 페이지에 1개만 가능
+            ㄴ class 선택자 : .클래스명 => 여러개 가능 (클래스 이름이 같으면 같은 선탁자의 스타일에 영향을 받음)
+            ㄴ 태그 선택자 : 태그명 (같은 태그명에 같은 스타일을 적용할 수 있다.)
+        -가상 클래스 선택자 : 가상 클래스명 
+            ㄴ어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자
+            ㄴ앞에 일반 선택자가 나오고, 뒤에 가상 클래스 선택자가 나옴
+            ㄴhover : 요소에 마우스를 올렸을 때 적용 
+            ㄴfocus : 요소가 포커스를 받고 있을 때 적용
+            ㄴnth-child(a) / :nth-of-type(a) : a번지에 해당하는 요소
+                n : 해당 번지의 요소
+                even : 짝수 요소
+                odd : 홀수 요소
+                3n 4n....의 배수 (조건에 연산도 가능함)
+
+        선택자 조합
+            ㄴ여러 선택자를 이용하여 요소를 선택
+            ㄴ자식 관계 : >
+                부모선택자>자식선택자
+                부모선택자 ( 바로 위의 선택자 )
+            ㄴ자손관계 : 공백
+                조상선택자(부모포함) 자손선택자 
+            ㄴ본인선택자 : 선택자를 붙혀서 나열
+                선택자1 선택자2
+                선택자1과 선택자2를 모두 만족하는 요소
+                ex)#png.hong(o) p.hong(o) divp (x)
+            ㄴ 조합시 순서, 선택자를 잘 고려해야험
+            ㄴ 안되는 조합
+                붙ㅌ여써서 안되는 상황 (띄어쓰가거 안되서 구분이 안되는 경우)
+                태그 선택자들로만 이루어진 경우
+
+        선택자 우선순위
+            ㄴ아이디 선택자 > 클래스 선택자 > 태그선택자
+            ㄴ우선순위가 같은 경우 아래에 있는게 적용
+    -->
+</body>
+</html>

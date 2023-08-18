@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        location 객체는 브라우저의 주소표시줄의 관련된 객체
+    </h1>
+    <ul>
+        <li>Location.href = 'url'; => url로 이동</li>
+        <li>
+            location.assion('url');
+            url로 이동 history객체에 저장
+        </li>
+        <li>
+            loaction.reload() : 현재 페이지 새로고침
+        </li>
+        <li></li>
+        <li></li>
+    </ul>
+    <button type="button" id="moveherf" >herf를 사용한 이동</button>
+    <script>
+        document.getElementById('moveherf').onclick = ()=>{
+            location.href='06_setInterval.html';
+        } 
+        document.getElementById('movereplace').onclick = ()=>{
+            location.replace('06_setInterval.html')
+        }
+        document.getElementById('moveassion').onclick =() =>{
+            location.assign('06_setInterval.html')
+        }
+        document.getElementById('movereroad').onclick= () =>{
+            location.reload()
+        }
+         
+    </script>
+</body>
+</html>

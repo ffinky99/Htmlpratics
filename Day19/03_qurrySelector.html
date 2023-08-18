@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">
+        querySelector(), querySelectorALL();
+        HTML 노드(관리객체)로 리턴하는 메서드
+    </h1>
+    <ul>
+        <li>
+            getElementBy** : HTMLcollection 리턴
+            name,id 속성으로 접근이 가능
+        </li>
+        <li>
+            querySelector : Nodelist 형태로 리턴
+            [0] index번호로만 접근 가능 << ㅈㄴ 옛날방식
+        </li>
+        <li>
+            getElementBy** : 더 빠르고 , 더 많은 지원가능 << mz픽 ㅇㅈ?
+        </li>
+    </ul>
+    <script>
+        let h1 = document.getElementById('h1')
+        console.log(typeof h1)
+        let li =document.querySelectorAll("li")
+        console.log(typeof li)
+        console.log(li)
+    </script>
+</body>
+</html>

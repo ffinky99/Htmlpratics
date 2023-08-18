@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        데이터를 다룰 때 배열과 객체를 혼용하여 다루는 경우가 많음
+    </h1>
+    <script>
+        const memberObject ={
+            name : 'kim',
+            age : 20,
+            married : false,
+            favors : ["game" ,"coffee","car","movie"]
+        };
+
+        const people = [];
+
+        for(let i =0; i<5; i++){
+            let copy = Object.assign({},memberObject)
+            people.push(copy)
+        }
+        people[1].name = 'park';
+        people[2].name = 'hong';
+        people[3].name = 'lee';
+        people[4].name = 'choi';
+
+        console.log(people)
+
+
+
+
+        //object를 생성해서 배열에 5개 복사하여 등록
+        //탐색.
+        const singer = {
+            name : 'IU',
+            age : 30,
+            job : '가수',
+            playist : {
+                first : '좋은날',
+                second : '분홍신',
+                third : '마야'
+            }
+        }
+        const copyHu = [];
+        for(let i =0 ; i<5 ;i++){
+            let copy = Object.assign({},singer)
+            copyHu.push(copy)
+        }
+        console.log(copyHu)
+
+        for(let oof of copyHu){
+            for(let iin in  oof){
+                console.log(oof[iin])
+                if('playist'==iin){
+                    for(let iiin in oof[iin]){
+                        console.log(iiin)
+                        console.log(oof[iin][iiin])
+                    }
+                  
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

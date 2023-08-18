@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //객체로 계좌현황
+        let myAccount ={
+            name:'hong',
+            balance: 0,
+            deposit : function(amount){
+                this.balance +=amount;
+            },
+            withraw : function(amount){
+                this.balance -=amount;
+            },
+            transfer : function(amount ,otherAccount){
+                this.balance -=amount;
+                otherAccount.balance +=amount;
+            }
+        }
+
+        let yourAccount ={
+            name:'hong',
+            balance: 1000,
+            deposit : function(amount){
+                this.balance +=amount;
+            },
+            withraw : function(amount){
+                this.balance -=amount;
+            },
+            transfer : function(amount ,otherAccount){
+                this.balance -=amount;
+                otherAccount.balance +=amount;
+            }
+        }
+        //내 계좌에 입금되는 상황
+        console.log(myAccount.balance)
+        myAccount.deposit(100000)
+        console.log(myAccount.balance)
+        myAccount.transfer(500,yourAccount)
+        console.log(myAccount.balance)
+        console.log(yourAccount.balance)
+
+        //class
+        class Account {
+            constructor(name,balance){
+                this.name =name
+                this.balance =balance
+            }
+            deposit(amount){
+                this.balance += amount;
+            }
+            withraw(amount){
+                this.balance -=amount;
+            }
+            transfer(amount,other){
+                this.balance -=amount;
+                other.balance +=amount;
+            }
+        }
+
+        let myAccount1 = new Account('박한결',1000000)
+        console.log(myAccount1)
+        myAccount1.deposit(10000)
+        console.log(myAccount1)
+        let yourAccount1= new Account('홍승보' ,0)
+        myAccount1.transfer(1,yourAccount1)
+        console.log(myAccount1)
+        console.log(yourAccount1)
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        배수 출력하기(1~100 중 입력한 숫자의 배수를 ㅊ출력)
+        <input type="text" value="1~100입력" id="num">
+        <button onclick="doit()">배수 츨력</button>
+    </h1>
+    <h3 id="result">
+        배수값 출력
+    </h3>
+    <script>
+        function doit(){
+            let num = document.getElementById('num').value;
+            let result=document.getElementById('result');
+            let re = 1;
+            result.innerText+=`
+            ${num}의 배수`
+            for(let i = 1 ; re<100; i++){
+              re  = num*i
+              if(re==num){
+              
+                result.innerText = "";
+              } 
+                result.innerText+=`${re}`
+                if(parseInt(re)+parseInt(num)>=100){
+                  
+                    break
+                }
+                else{
+                    result.innerText+=`,`
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

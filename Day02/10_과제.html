@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{
+            color: bisque;
+        }
+        a:active{
+            color: aquamarine;
+        }
+        a:visited{
+            color: rgb(214, 181, 34);
+        }
+        div{ 
+           background-color: rgb(203, 250, 252);  
+        }
+     
+        .d2{
+           font-size: 40px;
+        }
+        .d3{
+           font-size: 100px;
+        }
+        ul{
+            font-size: 30px;
+        }
+        li:nth-child(even){
+            color: red;
+        }
+        li:nth-child(odd){
+            color: green;
+        }
+        li:nth-child(1){
+           
+            font-weight: 900;
+        }
+        li:nth-child(10){
+            font-weight: 900;
+        }
+        ul>li:hover{
+            color: blue;
+        }
+
+        li::after{
+            content: "]";
+        }
+        li::before{
+            content: "[";
+        }
+    </style>
+</head>
+<body>
+
+
+    <div >
+        <a href="http://naver.com">네이버</a>
+    </div>
+    <div class="d2">
+        <a href="http://google.com">구글</a>
+    </div>
+    <div class="d3">
+        <a href="http://daum.net">다음</a>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+
+</html>
+
+<!-- div 3개 만들기
+    구글 네이버 다음 사이트 연결
+    div 스타일 다 다륵게
+    
+    링크 클릭 했는지 따라 글꼴 색ㅇ ㅣ달라지는 가상서택지가 있음
+    a:active (클릭할때색)
+    a:visited (링크를 눌러본 후 색)
+    a:link ( 방문전)
+
+
+
+    
+-->
+<!-- ul - -->

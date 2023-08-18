@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>변수나 상수에 할당할 수 있는 값의 종류</h1>
+    <li>
+        숫자 : Number => 정수, 실수, NaN(not a number : 숫자가 아님)
+    </li>
+    <li>
+        문자 : String => " ", ' ',` ` 감싼 값들
+    </li>
+    <li>
+        boolean : True / false
+    </li>
+    <li>
+        객체 : Object => 1개 이상의 데이터가 특정 구조를 가지고 있는 형태
+    </li>
+    <li>
+        배열 : Array : [1,2,3,...] 형태로 이루어진 데이터 집합
+    </li>
+    <li>
+        알 수 없는 값 : null => 뭔가 있긴한데 파악이 안됨
+    </li>
+    <li>
+        미지정된 값 : undefined => 값이 할당되지 않음
+    </li>
+    <li>
+        데이터 타입을 확인 명령어 : typeof 변수 / 값
+    </li>
+    <script>
+        let num =123456;
+        let str = "문자";
+        let bool = true;
+        let obj={};
+        let obj1=new Object();
+        let arr = [1,2,3];
+        let arr1 = new Array();
+        let undi = undefined;
+        let nu = null;
+        let nudi2; //undefined
+
+        console.log(`num : ${num} / ${typeof num}`)
+        console.log(`num : ${str} / ${typeof str}`)
+        console.log(`num : ${bool} / ${typeof bool}`)
+        console.log(`num : ${obj} / ${typeof obj}`)
+        console.log(`num : ${obj1} / ${typeof obj1}`)
+        console.log(`num : ${arr} / ${typeof arr}`)
+        console.log(`num : ${arr1} / ${typeof arr1}`)
+        console.log(`num : ${nu} / ${typeof nu}`)
+        console.log(`num : ${nudi1} / ${typeof nudi1}`)
+    </script>
+
+
+
+
+
+    <h1>변수의 관리</h1>
+    <ol>
+        <li>기본자료형(Primative Type): 값이 메모리의 주소값이 가르키는 곳에 직접 할당</li>
+        <li>
+            참조 자료형 (Refrence Type) : 값이 저장되어 있는 주소를 할당
+            String, object, array, function ,null nudefiend
+        </li>
+        <li>
+            ==같다(값) != 같지않다
+            ===같다 (값+타입)
+            !==같다 (값과 타잆이 같지 않은지 비교)
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ol>
+    <script>
+        let num1 =10;
+        let num2 ='10';
+        console.log(`num1==num2 =>`,  num1 ==num2)
+        console.log(`num1===num2 =>`,  num1 ===num2)
+        </script>
+
+
+</body>
+</html>

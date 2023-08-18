@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1f1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator{
+    border: 1px solid #333;
+    background-color: #ccc;
+    padding: 5px;
+}
+.calculator form{
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    grid-auto-rows: 65px;
+    gap: 5px;
+}
+.calculator form button, input{
+    font-size: 1rem;
+    /* font-weight: bold; */
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 5px;
+}
+.calculator form button:hover{
+    box-shadow: 1px 1px 2px #333;
+}
+.calculator form .clear{
+    background-color: orangered;
+}
+.calculator form .operator{
+    background-color: orange;
+}
+.calculator form .dot{
+    background-color: greenyellow;
+}
+.calculator form input[type='text']{
+    grid-column: span 4;
+    text-align: right;
+    background-color: white;
+}
+.calculator form .clear{
+    grid-column: span 3;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.calculator form .result{
+    grid-column: span 2;
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <form name="forms">
+            <input type="text" id="output" name="output" >
+            <button type="button" id="clear" class="clear" value="C">C</button>
+            <button type="button" class="operator" value="/">/</button>
+            <button type="button" class="number" value="1">1</button>
+            <button type="button" class="number" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" class="operator" value="*">*</button>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" class="operator" value="+">+</button>
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" class="operator" value="-">-</button>
+            <button type="button" class="dot" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" class="operator result" value="=">=</button>
+        </form>
+    </div>
+
+    </div>
+    <script>
+        let num1 
+        let num2//
+        let com
+        let result =''
+        
+        let str = "0*-+/"
+        let sc = document.getElementById('output')
+        document.addEventListener('click',(e)=>{
+            if(e.target.value=='*' || e.target.value=='+' || e.target.value=='/' || e.target.value=='-'){
+                num1 = sc.value
+                sc.value = e.target.value
+               
+                console.log(num1)
+            }
+            else if(e.target.value!=undefined &&e.target.value!='C'&&e.target.value!='='){
+                if(str.indexOf(sc.value)!=-1){
+                    com = sc.value
+                    sc.value = ''
+                }
+                
+                result += e.target.value
+                sc.value += e.target.value
+             
+            }
+            else if(e.target.value=='='){
+                num2 = sc.value
+                if(com=="*"){result=parseFloat(num1)*parseFloat(num2)}
+                if(com=="-"){result=parseFloat(num1)-parseFloat(num2)}
+                if(com=="+"){result=parseFloat(num1)+parseFloat(num2)}
+                if(com=="/"){result=parseFloat(num1)/parseFloat(num2)}
+               
+              
+               
+                    sc.value = parseInt(result)
+
+                
+
+            }
+            else if(e.target.value=="C"){
+                result =0
+                num1 = 0
+                num2 =0
+                sc.value = ''
+            }
+
+          
+              
+              
+            
+        })
+        document.getElementById('clear').addEventListener('click',()=>{
+           
+        })
+
+       let btn= document.getElementsByTagName('button')
+        
+        console.log(btn)
+    </script>
+</body>
+</html>

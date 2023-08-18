@@ -1,0 +1,46 @@
+
+.box{
+    
+    margin-left: auto;
+    margin-right: auto;
+   
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    font-family: 'Single Day', cursive;
+   
+    font-size: 75PX;
+    text-align: center;
+}
+div{
+
+    font-weight: 800;
+}
+.여행{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+a{
+   
+    
+    text-decoration:none;   
+    color: black;
+    font-size: 30px;
+    font-weight: 800;
+}
+ul{
+    font-family: 'Single Day', cursive;
+    text-align: center;
+   
+}
+li{
+    font-family: 'Single Day', cursive;
+    word-spacing: 8px;
+    list-style: none;
+    text-decoration:none;   
+      display: inline;
+}
+img{
+    border: 3px solid rgba(255, 191, 180, 0.904);
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mun()">문제출제</button>
+    <ul style="list-style: none;" id="llll">
+      
+    </ul>
+    <button type="button" onclick="cheak()">정답확인</button>
+    <h3 id="radio1"></h3>
+    <script>
+        let pr = [];
+        function mun(){
+            let llll = document.getElementById('llll')
+          
+            for(let i = 0 ; i<10;i++){
+                let num1 =Math.floor(Math.random()*9)+1
+                let num2 =Math.floor(Math.random()*9)+1
+                llll.innerHTML+=  `<li>${i+1}. ${num1} X ${num2} <input id="m${i+1}" type="text"></li>`
+                
+               pr.push( num1*num2);
+                
+                }
+            
+            console.log(pr)
+        }
+        function cheak(){
+            let count =0;
+            let radio1 = document.getElementById('radio1')
+            for(let i = 0 ; i<10; i++){
+                let num = Number(document.getElementById(`m${i+1}`).value)
+                if(num==pr[i]){
+                    document.getElementById(`m${i+1}`).style.background = "green"
+                    count ++
+                }
+                else{
+                    document.getElementById(`m${i+1}`).style.background = "red"
+                }
+            }
+            
+            radio1.innerText=`${count/10*100}%`
+           
+            // if(parseInt(m2)==pr[1]){
+            //     document.getElementById("m2").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m2").style.background = "red"
+            // }
+            // if(parseInt(m3)==pr[2]){
+            //     document.getElementById("m3").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m3").style.background = "red"
+            // }
+            // if(parseInt(m4)==pr[3]){
+            //     document.getElementById("m4").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m4").style.background = "red"
+            // }
+            // if(parseInt(m5)==pr[4]){
+            //     document.getElementById("m5").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m5").style.background = "red"
+            // }
+            // if(parseInt(m6)==pr[5]){
+            //     document.getElementById("m6").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m6").style.background = "red"
+            // }
+            // if(parseInt(m7)==pr[6]){
+            //     document.getElementById("m7").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m7").style.background = "red"
+            // }
+            // if(parseInt(m8)==pr[7]){
+            //     document.getElementById("m8").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m8").style.background = "red"
+            // }
+            // if(parseInt(m9)==pr[8]){
+            //     document.getElementById("m9").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m9").style.background = "red"
+            // }
+            // if(parseInt(m10)==pr[9]){
+            //     document.getElementById("m10").style.background = "green"
+            //     count ++
+            // }
+            // else{
+            //     document.getElementById("m10").style.background = "red"
+            // }
+            
+        }
+    </script>
+</body>
+</html>

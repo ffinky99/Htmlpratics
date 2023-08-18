@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box 속성</title>
+
+
+    <style>
+        .box{
+            color: rgb(255, 255, 255);
+            width: 100px;
+            height : 50px;
+            border: 1px solid black;
+            padding : 13px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            cursor: 1px;
+            background-color: rgb( 0, 199, 60);
+            text-align: center;
+            font-weight: 1000;
+        }
+        a{
+            text-decoration: none;
+            
+        }
+        .box2{
+        
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: content-box;
+
+        }
+        /* box를 클릭하면 naver로 이동하는 버튼  */
+    </style>
+</head>
+<body>
+        <!-- 
+            box  
+            width : 가로길이
+            box-sizeing : box의 크기를 지정하는 속성 
+
+            margin : box의 바깥여백
+            padding : box의 안쪽여백
+            
+            box-sizeing 에 따라 width 의 크기가 컨텐츠 자체의 가로가 될 수도 있고, 
+            박스 전체의 가로가 될 수도 있음.
+            -border-box => width = 컨텐츠의 가로 + padding + border
+            -contents-box => width = 컨텐츠의 가로
+            width = 100px box padding = 5px border 1px
+            border=box = 88 + 5+ 5 + 1+ 1= 100px << 더 많이 씀
+            contents box = 100 + 5 + 5 + 1 + 1 = 112
+            
+
+         -->
+
+
+      
+            <a href="http://naver.com"> <img src="/image/제목 없음.png" alt=""></a>
+         </div>
+         <div class ="box2">
+
+         </div>
+
+
+
+
+
+</body>
+</html>

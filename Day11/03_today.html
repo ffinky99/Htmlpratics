@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은</h1>
+    <button type="button" onclick="click1()">
+        Today
+    </button>
+
+    <h3 id="tod">
+        오늘 날짜와 요일을 출력
+        <!-- 2023 .07 .31.(월) -->
+    </h3>
+
+    <script>
+        function click1(){
+            let today = new Date();
+            today.getDay
+         
+            let yoil ='';
+            switch(today.getDay()){
+                case 0 : yoil += "(일)"
+                    break;
+                case 1 :yoil += "(월)"
+                
+                    break;
+                case 2 :yoil += "(회)"
+                  break;  
+                case 3 :yoil += "(수)"
+                  break;
+                case 4 :yoil += "(목)"
+                  break;
+                case 5 :yoil += "(금)"
+                    break;
+                case 6 :yoil += "(토)"
+                    break;
+
+            } 
+            console.log(yoil)
+            let tod = document.getElementById('tod');
+            tod.innerText =
+            `
+            ${today.toLocaleDateString()}
+ ${yoil}
+            `
+        }
+    </script>
+</body>
+</html>

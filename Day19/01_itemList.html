@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add">추가</button>
+        </form>
+        <div>
+            <ul id="itemlist"></ul>
+        </div>
+    </div>
+
+
+    <script>
+        let itemlist=[];
+        let addBtm = document.getElementById('add') 
+        
+        addBtm.addEventListener('click',addlist)
+        
+        function addlist(){
+            // item 추가 function
+            let item = document.getElementById('item').value
+            if(item!=null){
+                itemlist.push(item);
+                document.getElementById('item').value ='';
+                document.getElementById('item').focus();
+            }
+            console.log(itemlist)
+        }
+        function showlist(){
+            // item 표시
+        }
+        function removelist(){
+            // itom 삭제
+        }
+    </script>
+</body>
+</html>

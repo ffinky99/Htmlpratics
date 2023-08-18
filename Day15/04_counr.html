@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        버튼 2개 준비
+
+        + / -
+         0 => h1
+         -은 안됨
+     -->
+     <button type="button" id="plus" onclick="up()">+</button>
+     <button type="button" id="minous" onclick="down()">-</button>
+     <h3 id="screen"></h3>
+     
+     <script>
+        let num=0;
+        let screen = document.getElementById('screen')
+        function up(){
+              num++;
+            screen.innerText=`${num}`
+        }
+        function down(){
+            num--;
+            screen.innerText=`${num}`
+            if(num<0){
+                screen.innerText=`0보다 작을 수 없습니다.`  
+            }        
+        }
+     </script>
+</body>
+</html>

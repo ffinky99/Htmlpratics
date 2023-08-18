@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numArr=[12,8,46,78,45,68,'s','p','s']
+        const strArr=['a','p','s','u','y','k','l']
+
+        numArr.forEach(function(elem_value,index){
+            console.log(index,elem_value)
+        })
+        numArr.forEach(function(elem_value,index,self)
+        {
+            console.log(index,elem_value,self)
+        })
+        function printarr(e,i,a){
+            return `${e} : ${i} :${a}`;
+        }
+        const newArrMap2 = numArr.map(printarr)
+        console.log(newArrMap2)
+
+        console.log("----filter---")
+
+        const newNumArr = numArr.filter(function(e,i,arr){
+            return isNaN(e); //isNaN : num이 아닌지 확인
+        })
+        console.log(newNumArr)
+    </script>
+</body>
+</html>

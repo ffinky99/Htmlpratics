@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>up down game</h1>
+    <button id="gamestart"type="button" onclick="random()">랜덤숫자버튼</button>
+    <!-- <button type="button" onclick="reset()">다시시도</button> -->
+    <h3 id="game1"></h3>
+    <input id="answer1" type="text">
+    <button type="button" onclick="answer()">정답</button>
+</body>
+    <script>
+        let game
+        let game1 = document.getElementById('game1')
+        let cnt=0;
+        let gamestart = document.getElementById('gamestart')
+        function random(){
+            game = Math.floor(Math.random()*99)+1
+            console.log(game)
+            gamestart.innerText ="다시시도"
+            cnt = 0;
+            game1.innerText='게임을 시작합니다' 
+        }
+        function answer(){
+            let answer1 = document.getElementById('answer1').value
+            if(cnt>=4){
+                game1.innerText =`횟수를 모두 사용하였습니다.`
+            }
+            else{
+            if(game==parseInt(answer1)){
+            
+                game1.innerText = `정답입니다 ${cnt+1}번 만에 맞추셨습니다.`
+
+            }
+            else if(game>parseInt(answer1)){
+            cnt++
+          
+                game1.innerText = `Up ${5-cnt}번 남았습니다`
+                
+            }
+            else{
+                cnt++;
+                game1.innerText = `Down ${5-cnt}번 남았습니다`
+            }
+        }
+            
+        }
+    </script>
+</html>

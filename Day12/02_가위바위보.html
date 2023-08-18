@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="hhh">
+        가위 바위 보 게임 10번의 승률 출력
+    </h3>
+    <button type="button" id="btn" onclick="doit()">승률출력</button>
+
+    <script>
+        // 가위바위보는 com => 랜덤, player => 랜덤
+        // 승률 계산 승/10*100
+
+        //1가위 2 바위 3 보
+       
+        function doit(){
+            let count = 0;
+            let hhh =document.getElementById('hhh')
+            hhh.innerText=`
+            `;
+            hhh.innerText+=`
+            `;
+        for(let i = 1; i<=10;i++){
+
+          com1 = Math.floor(Math.random()*3)+1
+          player1 = Math.floor(Math.random()*3)+1
+          let com = ""
+          let player = ""
+          console.log(com1)
+          console.log(player)
+          switch(com1){
+            case 1 : com = "주먹"
+            break;
+            case 2 : com = "가위"   
+            break;
+            case 3 : com = "보"   
+            break;
+          }
+          switch(player1){
+            case 1 : player = "주먹"
+            break;
+            case 2 : player= "가위"
+            break;
+            case 3 : player = "보"
+            break;
+          }
+          if(com==player){
+            hhh.innerText +=`com : ${com} player : ${player} 무승부 입니다  남은 게임횟수 : ${10-i}
+            `            
+            console.log(com)
+          }
+          else if(com=="주먹"&&player=="가위"){
+            hhh.innerText +=`com : ${com} player : ${player} 패배 입니다  남은 게임횟수 : ${10-i}
+            `  
+          }
+          else if(com=="가위"&&player=="보"){
+            hhh.innerText +=`com : ${com} player : ${player} 패배 입니다  남은 게임횟수 : ${10-i}
+            `  
+          }
+          else if(com=="보"&&player=="주먹"){
+            hhh.innerText +=`com : ${com} player : ${player} 패배 입니다  남은 게임횟수 : ${10-i}
+            `  
+          }
+          else{
+       
+            hhh.innerText +=`com : ${com} player : ${player} 승리 입니다  남은 게임횟수 : ${10-i}
+            `  
+            count++;
+          }
+        }
+        hhh.innerText += `승률 ${count/10*100} %}`
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: rgb(206, 206, 206);
+            text-shadow: 3px 3px 3px #000 ,3px 3px 3px #000 ,3px 3px 3px #000,3px 3px 3px #000;
+            background-image:  url(/image/어벤져스.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            opacity: 0.9;
+        }
+        
+        #head{
+            color: rgb(216, 11, 11);
+            font-family: 'Vina Sans', cursive;
+            position: absolute;
+
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 140px;
+        }
+        #line{
+
+            position: absolute;
+            top: 29%;
+            left: 50%;
+            transform: translate(-50%);
+            font-weight: 800;
+            font-size: 23px;
+        }
+        #div1{
+
+            color: rgb(216, 11, 11);
+            font-family: 'Vina Sans', cursive;
+            font-size: 50px;
+            
+            left: 10%;
+            position: absolute;
+            top: 38%;
+        }
+        #div4{
+            font-size: 22px;
+            font-weight: 500;
+            left: 10%;
+            position: absolute;
+            top: 46%;
+        }
+        #ul1{
+            font-size: 22px;
+            font-weight: 500;
+            left: 10%;
+            position: absolute;
+            top: 51%;
+
+        }
+
+        #div2{
+            color: rgb(216, 11, 11);
+            font-family: 'Vina Sans', cursive;
+            font-size: 50px;
+            
+            left: 50%;
+            transform: translate(-50%);
+            position: absolute;
+            top: 38%;
+        }
+        #div5{
+            font-size: 22px;
+            font-weight: 500;
+            left: 50%;
+            transform: translate(-50%);
+            position: absolute;
+            top: 46%;
+        }
+        #ul2{
+            font-size: 22px;
+            font-weight: 500;
+            left: 50%;
+            transform: translate(-50%);
+            position: absolute;
+            top: 51%;
+
+        }
+
+        #div3{
+            color: rgb(216, 11, 11);
+            font-family: 'Vina Sans', cursive;
+            font-size: 50px;
+          
+            left: 80%;
+            position: absolute;
+            top: 38%;
+        }
+        #div6{
+            font-size: 22px;
+            font-weight: 500;
+            left: 80%;
+            position: absolute;
+            top: 46%;
+        }
+        #ul3{
+            font-size: 22px;
+            font-weight: 500;
+            left: 80%;
+            position: absolute;
+            top: 51%;
+
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+          
+            font-size:20px;
+        }
+        
+        
+    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+   <h1 id="head"></h1>
+   <p id="line"></p>
+   <div id="div1"></div>
+   <div id="div2"></div>
+   <div id="div3"></div>
+   <div id="div4"></div>
+   <div id="div5"></div>
+   <div id="div6"></div>
+   <ul id="ul1"></ul>
+   <ul id="ul2"></ul>
+   <ul id="ul3"></ul>
+    
+
+    <script>
+        let head = document.getElementById('head')
+        let line = document.getElementById('line')
+        let div1 = document.getElementById('div1')
+        let div2 = document.getElementById('div2')
+        let div3 = document.getElementById('div3')
+        let div4 = document.getElementById('div4')
+        let div5 = document.getElementById('div5')
+        let div6 = document.getElementById('div6')
+        let ul1 = document.getElementById('ul1')
+        let ul2 = document.getElementById('ul2')
+        let ul3 = document.getElementById('ul3')
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+        .then(resp =>resp.json())
+        .then(json => {head.innerText+=`${json['squadName']}`
+        line.innerText+= `${"HomeTown"}:${json["homeTown"]} // ${"Formed"}:${json["formed"]}`
+
+        div1.innerText+= `${json["members"][0]["name"]}`
+        div2.innerText+= `${json["members"][1]["name"]}`
+        div3.innerText+= `${json["members"][2]["name"]}`
+        div4.innerText+= `${"secretIdentity"}:${json["members"][0][ "secretIdentity"]}
+                           ${"Age"}:${json["members"][0][ "age"]}`
+        div5.innerText+= `${"secretIdentity"}:${json["members"][1][ "secretIdentity"]}
+                           ${"Age"}:${json["members"][1][ "age"]}`
+        div6.innerText+= `${"secretIdentity"}:${json["members"][2][ "secretIdentity"]}
+                           ${"Age"}:${json["members"][2][ "age"]}`
+        ul1.innerText+= `${"Superpowers :"}`
+        ul1.innerHTML+= `<li>${json["members"][0]["powers"][0]} </li>`
+        ul1.innerHTML+= `<li>${json["members"][0]["powers"][1]} </li>`
+        ul1.innerHTML+= `<li>${json["members"][0]["powers"][2]} </li>`
+        ul2.innerText+= `${"Superpowers :"}`
+        ul2.innerHTML+= `<li>${json["members"][1]["powers"][0]} </li>`
+        ul2.innerHTML+= `<li>${json["members"][1]["powers"][1]} </li>`
+        ul2.innerHTML+= `<li>${json["members"][1]["powers"][2]} </li>`
+        ul3.innerText+= `${"Superpowers :"}`
+        ul3.innerHTML+= `<li>${json["members"][2]["powers"][0]} </li>`
+        ul3.innerHTML+= `<li>${json["members"][2]["powers"][1]} </li>`
+        ul3.innerHTML+= `<li>${json["members"][2]["powers"][2]} </li>`
+        ul3.innerHTML+= `<li>${json["members"][2]["powers"][3]} </li>`
+        ul3.innerHTML+= `<li>${json["members"][2]["powers"][4]} </li>`
+
+    
+    })
+
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button type="button" onclick="mynum()">랜덤번호 6개 출력하기</button>
+    <h1 id="mynum"></h1>
+    <button type="button" onclick="roto()">당첨번호 7개 출력하기</button>
+    <h2 id="roto"></h2>
+    <button type="button" onclick="result()">결과 확인</button>
+    <h3 id="result"></h3>
+    <button type="button" onclick="reset()">다시하기</button>
+    <h4 id="reset"></h4>
+    
+    <script>
+        let num1 = new Set()
+        let num2 = new Set()
+        let bonus=0;
+        let cnt =0;
+        function mynum(){
+            
+            let mynum = document.getElementById('mynum')
+            
+            mynum.innerText=``
+            for(let i =0; i<6;i++){
+                num1.add(Math.floor(Math.random()*6)+1)  
+                if(i==5&& num1.size<6){
+                    i--
+                } 
+            }
+            num1.forEach(function(e){
+                mynum.innerText+= `${e} ,` 
+            })
+            
+        }
+        function roto(){
+            
+            let roto = document.getElementById('roto')
+            roto.innerText=``
+            for(let i =0; i<7;i++){
+                num2.add(Math.floor(Math.random()*7)+1)   
+                
+                if(i==6&& num2.size<7){
+                    i--
+                }
+            }
+            num2.forEach(function(e){
+                roto.innerText+= `${e} ,` 
+                
+            })
+        }
+        function result(){
+            let result = document.getElementById('result')
+            let arr =[7];
+           
+            
+                
+                
+                num1.forEach(function(e){
+                    num2.forEach(function(d){
+                        arr = d
+                        
+                        if(e==d){
+                            cnt++
+                            
+                        }
+                        if(d==arr[6]){
+                            bonus++
+                        }
+                    })
+                    
+                })
+                
+                if(cnt==6){
+                    result.innerText=`1등 입니다`
+                    bonus =0;
+                    cnt =0;
+                }    
+                else if(cnt>=5 &&bonus==1){
+                    result.innerText=`2등 입니다`
+                    
+                    bonus =0;
+                    cnt =0;
+                }   
+                else if(cnt==5){
+                    result.innerText=`3등 입니다`
+                    
+                    bonus =0;
+                    cnt =0;
+                }  
+                else if(cnt==4){
+                    result.innerText=`4등 입니다`
+                    
+                    bonus =0;
+                    cnt =0;
+                }  
+                else{
+                    result.innerText=`꽝 입니다`
+                    bonus =0;
+                    cnt =0;
+                    
+                } 
+            }
+                function reset(){
+                    let mynum = document.getElementById('mynum')
+            
+                    let roto = document.getElementById('roto')
+                    let result = document.getElementById('result')
+                    mynum.innerText =""
+                    roto.innerText =""
+                    result.innerText=""
+                    num1.clear;
+                    num2.clear;
+                }       
+
+    </script>
+
+
+</body>
+</html>

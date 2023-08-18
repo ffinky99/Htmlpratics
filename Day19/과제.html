@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <img id="img" src="" alt="">
+</body>
+    <script>
+         let ran = Math.floor(Math.random()*3)+1
+    
+
+            //  setTimeout(()=>ran = Math.floor(Math.random()*3)+1,1000)
+            setInterval(()=>ran = Math.floor(Math.random()*3)+1,1000)
+            setInterval(()=>console.log(ran),1000)
+
+           let img = document.getElementById('img')
+           setInterval(()=>img.src = `/image/cat${ran}.jpg`,1000)
+            
+        
+
+         
+    </script>
+</html>
